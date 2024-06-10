@@ -288,18 +288,18 @@ LIBRARIES :=
 ################################################################################
 
 # Makefile include to help find GL Libraries
-include ./findgllib.mk
+#include ./findgllib.mk
 
 # OpenGL specific libraries
-ifeq ($(TARGET_OS),darwin)
+#ifeq ($(TARGET_OS),darwin)
  # Mac OSX specific libraries and paths to include
- LIBRARIES += -L/System/Library/Frameworks/OpenGL.framework/Libraries
- LIBRARIES += -lGL -lGLU
- ALL_LDFLAGS += -Xlinker -framework -Xlinker GLUT
-else
- LIBRARIES += $(GLLINK)
- LIBRARIES += -lGL -lGLU -lglut
-endif
+# LIBRARIES += -L/System/Library/Frameworks/OpenGL.framework/Libraries
+# LIBRARIES += -lGL -lGLU
+# ALL_LDFLAGS += -Xlinker -framework -Xlinker GLUT
+#else
+# LIBRARIES += $(GLLINK)
+# LIBRARIES += -lGL -lGLU -lglut
+#endif
 
 #Detect if installed version of GCC supports required C++14
 ifeq ($(TARGET_OS),linux)
